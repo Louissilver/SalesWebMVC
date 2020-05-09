@@ -4,33 +4,40 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SalesWebMvc.Models;
+using SalesWebMvc.Models.ViewModel;
 
-namespace SalesWebMvc.Controllers {
-    public class HomeController : Controller {
-        public IActionResult Index() {
+namespace SalesWebMvc.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
             return View();
         }
 
-        public IActionResult About() {
+        public IActionResult About()
+        {
             ViewData["Message"] = "Salles Web MVC App from C# Course";
-            ViewData["Desenvolvedor"] = "Luís Fernando da Silveira";
+            ViewData["Desenvolvedor"] = "";
 
             return View();
         }
 
-        public IActionResult Contact() {
+        public IActionResult Contact()
+        {
             ViewData["Message"] = "Your contact page.";
 
             return View();
         }
 
-        public IActionResult Privacy() {
+        public IActionResult Privacy()
+        {
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error() {
+        public IActionResult Error()
+        {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
